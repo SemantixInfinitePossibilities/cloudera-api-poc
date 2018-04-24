@@ -1,15 +1,15 @@
 # POC - Cloudera API 
-## Objetivos
-* Como recuperar queries feitas via Impala
-  Via API Rest do Cloudera Manager
-* Como recuperar queries feitas via Hive
-  Via API do Resource Manager
-* Como recuperar queries feitas via programa (ex. Spark jobs)
+## Objectives
+* How to retrieve Impala's full text queries?
+  Via API Rest of Cloudera Manager
+* How to retrieve Hive's full text queries?
+  Via Resource Manager API
+* How to retrieve text queries made by program applications? (ex. Spark _jobs_)
   ...
   
 ## Cloudera Manager 
 * API Rest Doc: `https://cloudera.github.io/cm_api/apidocs/v11/index.html`
-* Exemplos na VM quickstart:
+* Testing at Quickstart VM:
  ```
  curl -u cloudera:cloudera -X GET http://quickstart.cloudera:7180/api/v11/clusters
  curl -u cloudera:cloudera -X GET http://quickstart.cloudera:7180/api/v11/clusters/Cloudera%20QuickStart/services/
@@ -17,11 +17,11 @@
  curl -u cloudera:cloudera -X GET "http://quickstart.cloudera:7180/api/v11/users/"
  curl -u cloudera:cloudera -X GET "http://quickstart.cloudera:7180/api/v11/clusters/Cloudera%20QuickStart/services/"
 ```
-* Recuperando as consultas feitas via Impala:
+* **Retrieving content queries via Impala**:
 ```
  curl -u cloudera:cloudera -X GET  http://quickstart.cloudera:7180/api/v11/clusters/Cloudera%20QuickStart/services/impala/impalaQueries
 ```
-Saída, onde a consulta está no campo `statement` : 
+Output (query content in `statement` field) : 
 ```json
 {
   "queries" : [ {
@@ -53,7 +53,8 @@ Saída, onde a consulta está no campo `statement` :
     "durationMillis" : 643
   }
 ```
+## Cloudera API Client
+
+
+
 ## Cloudera Navigator
-
-
-##
