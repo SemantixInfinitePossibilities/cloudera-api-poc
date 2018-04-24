@@ -53,6 +53,12 @@ Output (query content in `statement` field) :
     "durationMillis" : 643
   }
 ```
+* Viewing hive queries via YARN Applications (Not Rest API): Filtering after `Clusters -> Yarn Applications` 
+
+* **Retrieving hive queries via YARN Applications**:
+ ```
+ curl -u cloudera:cloudera -X GET  "http://quickstart.cloudera:7180/api/v16/clusters/loudera%20QuickStart/services/hive/yarnApplications"
+ ```
 ## Cloudera API Client
 
 
