@@ -60,7 +60,6 @@ Output (query content in `statement` field) :
  curl -u cloudera:cloudera -X GET  "http://quickstart.cloudera:7180/api/v16/clusters/loudera%20QuickStart/services/hive/yarnApplications"
  ```
 ## Cloudera API Client
-
-
+* Repository: https://github.com/cloudera/cm_api
 
 ## Cloudera Navigator
