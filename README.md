@@ -98,8 +98,11 @@ Output (query content in `statement` field) :
       * `Cluster-Poc001` is the cluster name and `CD-YARN-CTJqbtLF`is the yarn service name.
       * The complete query is located into *`hive_query_string`* attribute.
       * To get the applications about Hive, it's important use the dates parameters (`from` and `to`)  and the `hive` user in the filter parameter.
+      * These queries obtained correspond to those that have become MR jobs.
+      
     
 ## Cloudera API Client
 * Repository: https://github.com/cloudera/cm_api
+
 
 ## Cloudera Navigator
