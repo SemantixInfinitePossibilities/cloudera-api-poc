@@ -61,7 +61,7 @@ Output (query content in `statement` field) :
  ```
  curl -u semantix:1\&PnQBKE1YMg -v -X GET http://ec2-18-204-108-136.compute-1.amazonaws.com:7180/api/v16/clusters/Cluster-Poc001/services/CD-YARN-CTJqbtLF/yarnApplications?from=17-04-18&to=now&filter='user=hive'
  ```
-   * Output about a hive yarn application:
+   Output about a hive yarn application:
    ```json
     {
     "applicationId" : "job_1524687286344_0002",
@@ -94,7 +94,7 @@ Output (query content in `statement` field) :
       ...
       }
    ```
-   * *Remarks*: 
+   *Remarks*: 
       * `Cluster-Poc001` is the cluster name and `CD-YARN-CTJqbtLF`is the yarn service name.
       * The complete query is located into *`hive_query_string`* attribute.
       * To get the applications about Hive, it's important use the dates parameters (`from` and `to`)  and the `hive` user in the filter parameter.
