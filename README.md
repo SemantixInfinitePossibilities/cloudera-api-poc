@@ -53,12 +53,52 @@ Output (query content in `statement` field) :
     "durationMillis" : 643
   }
 ```
-* Viewing hive queries via YARN Applications (Not Rest API): Filtering after `Clusters -> Yarn Applications` 
-
+* Viewing hive queries via YARN Applications (Not Rest API):
+  * Access at `Clusters -> Yarn Applications` and filter by user(hive), dates, etc.
+  * Access at `Diagnostics -> Log`and filter by source(hive), dates, etc.`
+  
 * **Retrieving hive queries via YARN Applications**:
  ```
- curl -u cloudera:cloudera -X GET  "http://quickstart.cloudera:7180/api/v16/clusters/loudera%20QuickStart/services/hive/yarnApplications"
+ curl -u semantix:1\&PnQBKE1YMg -v -X GET http://ec2-18-204-108-136.compute-1.amazonaws.com:7180/api/v16/clusters/Cluster-Poc001/services/CD-YARN-CTJqbtLF/yarnApplications?from=17-04-18&to=now&filter='user=hive'
  ```
+   * Output about a hive yarn application:
+   ```json
+    {
+    "applicationId" : "job_1524687286344_0002",
+    "name" : "INSERT INTO TABLE ale...137','destination2')(Stage-1)",
+    "startTime" : "2018-04-25T21:39:04.002Z",
+    "endTime" : "2018-04-25T21:39:09.774Z",
+    "user" : "admin",
+    "pool" : "root.users.admin",
+    "state" : "SUCCEEDED",
+    "attributes" : {
+      "rack_local_maps_percentage" : "100",
+      "map_counter:org.apache.hadoop.mapreduce.filesystemcounter.hdfs_write_ops" : "3",
+      "map_counter:org.apache.hadoop.mapreduce.taskcounter.split_raw_bytes" : "294",
+      "reduce_counter:org.apache.hadoop.mapreduce.filesystemcounter.file_bytes_written" : "0",
+      "map_counter:hive.records_out_1_alertas.empregado" : "1",
+      "reduce_counter:hive.deserialize_errors" : "0",
+      "reduce_counter:org.apache.hadoop.mapreduce.taskcounter.spilled_records" : "0",
+      "counter:org.apache.hadoop.mapreduce.jobcounter.rack_local_maps" : "1",
+      "reduce_counter:org.apache.hadoop.mapreduce.jobcounter.slots_millis_maps" : "0",
+      "total_launched_maps" : "1",
+      "reduce_counter:org.apache.hadoop.mapreduce.taskcounter.cpu_milliseconds" : "0",
+      "cm_cpu_milliseconds" : "1600",
+      "counter:org.apache.hadoop.mapreduce.jobcounter.millis_maps" : "3541",
+      "counter:hive.deserialize_errors" : "0",
+      "map_counter:org.apache.hadoop.mapreduce.jobcounter.vcores_millis_maps" : "0",
+      "counter:org.apache.hadoop.mapreduce.filesystemcounter.file_bytes_written" : "291355",
+      "hive_query_string" : "INSERT INTO TABLE alertas.empregado(id, name, salary, destination) \nVALUES(13,'Luara','137','destination2')",
+      "physical_memory_bytes" : "274825216",
+      "reduce_counter:org.apache.hadoop.mapreduce.jobcounter.vcores_millis_maps" : "0",
+      ...
+      }
+   ```
+   * *Remarks*: 
+      * `Cluster-Poc001` is the cluster name and `CD-YARN-CTJqbtLF`is the yarn service name.
+      * The complete query is located into *`hive_query_string`* attribute.
+      * To get the applications about Hive, it's important use the dates parameters (`from` and `to`)  and the `hive` user in the filter parameter.
+    
 ## Cloudera API Client
 * Repository: https://github.com/cloudera/cm_api
 
