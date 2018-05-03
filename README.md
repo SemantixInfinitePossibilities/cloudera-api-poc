@@ -55,9 +55,12 @@ Output (query content in `statement` field) :
 ```
 * Viewing hive queries via YARN Applications (Not Rest API):
   * Access at `Clusters -> Yarn Applications` and filter by user(hive), dates, etc.
-  * Access at `Diagnostics -> Log`and filter by source(hive), dates, etc.`
+  * Access at `Diagnostics -> Log` and filter by source(hive), dates, etc.
+  * Via HiveServer2 web UI: `http://<host>:<port>/hiveserver2.jsp`
+    *  It can be accessed via CM: `https://www.cloudera.com/documentation/enterprise/5-11-x/topics/cm_mc_hive_webui.html`
+  * Hue History.
   
-* **Retrieving hive queries via YARN Applications**:
+* **Retrieving hive queries via CM REST API (YARN Applications)**:
  ```
  curl -u semantix:1\&PnQBKE1YMg -v -X GET http://ec2-18-204-108-136.compute-1.amazonaws.com:7180/api/v16/clusters/Cluster-Poc001/services/CD-YARN-CTJqbtLF/yarnApplications?from=17-04-18&to=now&filter='user=hive'
  ```
