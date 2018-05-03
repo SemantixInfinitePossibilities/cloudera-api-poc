@@ -101,8 +101,16 @@ Output (query content in `statement` field) :
       * These queries obtained correspond to those that have become MR jobs.
       
     
-## Cloudera API Client
-* Repository: https://github.com/cloudera/cm_api
+## Cloudera Manager API Client
+* Cloudera Manager API Client (cm_api) Repository: `https://github.com/cloudera/cm_api`
+* Available languages: Java and Python.
 
+### CM_API in Python 
+* Documentation: `https://cloudera.github.io/cm_api/docs/python-client/`
+* Install `cm_api`: `sudo pip install cm-api`
+* Testing the CM API in `/scripts` of this repository.  
 
 ## Cloudera Navigator
+
+## Spark's logging queries
+* The YARN applications (via API REST or web app) about Spark's jobs don't show the used Hive's queries.
