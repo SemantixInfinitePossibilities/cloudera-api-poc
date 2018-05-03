@@ -122,3 +122,9 @@ curl -u semantix:1\&PnQBKE1YMg -v -X GET http://ec2-18-204-108-136.compute-1.ama
 
 ## Spark's logging queries
 * The YARN applications (via API REST or web app) about Spark's jobs don't show the used Hive's queries.
+
+##MISC
+* Convert date to timestamp in bash
+```
+date "+%s" -d "02/20/2013 08:41:15"
+```
