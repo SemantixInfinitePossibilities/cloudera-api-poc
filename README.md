@@ -122,8 +122,8 @@ Output (query content in `statement` field) :
 * **Retrieving content queries via Impala**:
 Query: 
 SERVICE_NAME==*IMPALA*
-startTime = Sat Jun 29 18:41:39 -03 2002
-endTime = Thu May  3 19:34:59 -03 2018
+startTime = Sat Jun 29 18:41:39 -03 2002  #should be in miliseconds (seconds / 1000)
+endTime = Thu May  3 19:34:59 -03 2018    #should be in miliseconds (seconds / 1000)
 limit=10
 ```
 curl -X GET -u semantix:1\&PnQBKE1YMg "http://ec2-18-204-108-136.compute-1.amazonaws.com:7187/api/v13/audits/?query=SERVICE_NAME%3D%3D*IMPALA*&startTime=1025386899000&endTime=1525386899000&limit=10&offset=0&format=JSON&attachment=false"
@@ -173,8 +173,8 @@ Output (query content in `operation_text` field) :
 * **Retrieving content queries via Hive**:
 Query: 
 SERVICE_NAME==*HIVE*
-startTime = Sat Jun 29 18:41:39 -03 2002
-endTime = Thu May  3 19:34:59 -03 2018
+startTime = Sat Jun 29 18:41:39 -03 2002     #should be in miliseconds (seconds / 1000)
+endTime = Thu May  3 19:34:59 -03 2018       #should be in miliseconds (seconds / 1000)
 limit=10
 ```
 curl -X GET -u semantix:1\&PnQBKE1YMg "http://ec2-18-204-108-136.compute-1.amazonaws.com:7187/api/v13/audits/?query=SERVICE_NAME%3D%3D*HIVE*&startTime=1025386899000&endTime=1525386899000&limit=10&offset=0&format=JSON&attachment=false"
@@ -226,4 +226,9 @@ Output (query content in `operation_text` field) :
 ```
 date "+%s" -d "02/20/2013 08:41:15"
 date "+%s" -d now
+```
+
+* Convert timestamp (in seconds) to date in bash
+```
+date -d @1025386899
 ```
