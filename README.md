@@ -114,6 +114,11 @@ Output (query content in `statement` field) :
 * Testing the CM API in `/scripts` of this repository.  
 
 ## Cloudera Navigator
+* We can get the *Hive* or *Impala* queries on the search panel, and filtering by the _Source Type_.
+* Testing REST API:
+```
+curl -u semantix:1\&PnQBKE1YMg -v -X GET http://ec2-18-204-108-136.compute-1.amazonaws.com:7187/api/v3/entities
+```
 
 ## Spark's logging queries
 * The YARN applications (via API REST or web app) about Spark's jobs don't show the used Hive's queries.
