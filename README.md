@@ -1,9 +1,7 @@
 # POC - Cloudera API 
 ## Objectives
 * How to retrieve Impala's full text queries?
-  Via API Rest of Cloudera Manager
 * How to retrieve Hive's full text queries?
-  Via Resource Manager API
 * How to retrieve text queries made by program applications? (ex. Spark _jobs_)
   ...
   
